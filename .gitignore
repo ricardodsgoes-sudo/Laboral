@@ -1,0 +1,33 @@
+# Sistema operacional
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Artefatos de preview / captura de tela
+*.chrome-*/
+home-v2-desktop.png
+home-v2-mobile.png
+
+# Arquivos temporários de editor
+*.swp
+*.swo
+*~
+.vscode/
+
+# Ferramentas/artefatos de teste local (Playwright, capturas)
+node_modules/
+package.json
+package-lock.json
+_shot*.js
+_cap_*.png
+_wk_*.png
+_full_*.png
+_sm_*.png
+
+# Assets de trabalho / matéria-prima (não fazem parte do site publicado)
+framer diamante hero/
+ChatGPT Image*.png
+Diamond_appears*.mp4
+image 9.png
+masc hero tecnologia.png
+template.png

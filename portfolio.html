@@ -1,0 +1,268 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Resultados | Laborite Estética Dental</title>
+    <meta
+      name="description"
+      content="Galeria de trabalhos e bastidores da Laborite Estética Dental: lentes, facetas, zircônia, protocolos, planejamento 3D e fluxo CAD/CAM."
+    />
+    <link rel="icon" href="favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://unpkg.com/lenis@1.2.3/dist/lenis.css" />
+    <link rel="stylesheet" href="css/home.css" />
+    <link rel="stylesheet" href="css/portfolio.css" />
+  </head>
+  <body class="lab">
+    <!-- ============ SVG sprite ============ -->
+    <svg width="0" height="0" aria-hidden="true" style="position: absolute">
+      <symbol id="ic-diamond" viewBox="0 0 100 110">
+        <path d="M30 28 L70 28 L88 48 L50 102 L12 48 Z M12 48 L88 48" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linejoin="round" />
+        <path d="M30 28 L36 48 M50 28 L36 48 M50 28 L64 48 M70 28 L64 48 M50 28 L50 48 M36 48 L50 102 M50 48 L50 102 M64 48 L50 102" fill="none" stroke="currentColor" stroke-width="2.2" />
+      </symbol>
+      <symbol id="ic-send" viewBox="0 0 24 24">
+        <path d="M22 2 L11 13 M22 2 L15 22 L11 13 L2 9 Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+      </symbol>
+      <symbol id="ic-arrow" viewBox="0 0 24 24">
+        <path d="M5 12 H19 M13 6 l6 6 -6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+      </symbol>
+      <symbol id="ic-ig" viewBox="0 0 24 24">
+        <rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="2" />
+        <circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2" />
+        <circle cx="17.5" cy="6.5" r="1.4" fill="currentColor" />
+      </symbol>
+      <symbol id="ic-wa" viewBox="0 0 24 24">
+        <path d="M12 2 a10 10 0 0 0 -8.5 15.2 L2 22 l4.9 -1.5 A10 10 0 1 0 12 2 Z" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round" />
+        <path d="M8.5 7.5 c-.5 0 -1 .2 -1.3 .9 c-.4 .9 -.5 2.6 1.2 4.7 c1.8 2.2 3.7 3 4.9 3.2 c1.2 .2 2 -.2 2.4 -.8 c.3 -.5 .3 -1 .2 -1.2 c-.1 -.2 -1.7 -1 -2 -1.1 c-.3 -.1 -.5 0 -.7 .3 l-.5 .7 c-.2 .2 -.3 .2 -.6 .1 c-.8 -.4 -1.6 -.9 -2.4 -2 c-.2 -.3 0 -.5 .1 -.7 l.4 -.6 c.1 -.2 0 -.4 0 -.6 c-.1 -.2 -.6 -1.6 -.9 -2 c-.2 -.3 -.4 -.3 -.5 -.3 Z" fill="currentColor" />
+      </symbol>
+      <symbol id="ic-mail" viewBox="0 0 24 24">
+        <rect x="3" y="5" width="18" height="14" rx="2.5" fill="none" stroke="currentColor" stroke-width="2" />
+        <path d="M4 7 L12 13 L20 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+      </symbol>
+      <symbol id="ic-phone" viewBox="0 0 24 24">
+        <path d="M6 3 h3 l2 5 -2.5 1.5 a11 11 0 0 0 5 5 L21 13 v3 a2 2 0 0 1 -2 2 A16 16 0 0 1 4 5 a2 2 0 0 1 2 -2 Z" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round" />
+      </symbol>
+    </svg>
+
+    <template id="seal-tpl">
+      <svg class="seal" viewBox="0 0 200 200" aria-hidden="true">
+        <defs>
+          <path id="seal-arc" d="M100,100 m-75,0 a75,75 0 1,1 150,0 a75,75 0 1,1 -150,0" fill="none" />
+        </defs>
+        <g class="seal-ring">
+          <text>
+            <textPath href="#seal-arc" startOffset="0" textLength="471" lengthAdjust="spacing">
+              LABORITE · ESTÉTICA DENTAL · LABORITE · ESTÉTICA DENTAL ·
+            </textPath>
+          </text>
+        </g>
+        <use class="seal-gem" href="#ic-diamond" x="66" y="60" width="68" height="80" />
+      </svg>
+    </template>
+
+    <!-- ============ HEADER ============ -->
+    <header class="lab-header lab-header--solid">
+      <div class="lab-shell lab-header-inner">
+        <a class="lab-brand" href="index.html" aria-label="Laborite Estética Dental — início">
+          <svg class="lab-mark" viewBox="0 0 100 110" aria-hidden="true"><use href="#ic-diamond" /></svg>
+          <span class="lab-word"><strong>LABORITE</strong><em>Estética Dental</em></span>
+        </a>
+        <button class="nav-toggle" type="button" aria-label="Abrir menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+        <nav class="nav-links" aria-label="Navegação principal">
+          <a href="index.html">Home</a>
+          <a href="sobre.html">Sobre nós</a>
+          <a href="servicos.html">Soluções</a>
+          <a href="fluxo.html">Fluxo digital</a>
+          <a class="is-active" href="portfolio.html">Resultados</a>
+          <a href="contato.html">Contato</a>
+          <a class="lab-btn lab-btn--ghost lab-nav-cta" href="#" data-whatsapp>
+            Enviar caso <svg class="lab-ic" viewBox="0 0 24 24"><use href="#ic-send" /></svg>
+          </a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <!-- ============ HERO ============ -->
+      <section class="pf-hero">
+        <div class="lab-shell pf-hero-inner">
+          <div class="pf-hero-copy">
+            <p class="pf-eyebrow">Portfólio técnico</p>
+            <h1>Textura, translucidez e fluxo digital em imagens reais.</h1>
+            <p>
+              Uma seleção de trabalhos e bastidores para mostrar a materialidade do laboratório:
+              planejamento, produção, acabamento e documentação de caso.
+            </p>
+            <div class="pf-hero-actions">
+              <a class="lab-btn lab-btn--fill" href="#" data-whatsapp>
+                Enviar caso <svg class="lab-ic" viewBox="0 0 24 24"><use href="#ic-send" /></svg>
+              </a>
+              <a class="lab-btn lab-btn--outline" href="servicos.html">
+                Conhecer soluções <svg class="lab-ic" viewBox="0 0 24 24"><use href="#ic-arrow" /></svg>
+              </a>
+            </div>
+          </div>
+          <div class="pf-hero-seal" data-seal data-depth="0.05"></div>
+        </div>
+        <svg class="lab-wave" viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true">
+          <path d="M0,120 L0,64 C280,8 560,8 720,40 C900,76 1160,108 1440,40 L1440,120 Z" fill="#ffffff" />
+        </svg>
+      </section>
+
+      <!-- ============ GALERIA ============ -->
+      <section class="pf-board" id="galeria">
+        <div class="lab-shell">
+          <header class="lab-head lab-head--center" data-rise>
+            <p class="pf-eyebrow pf-eyebrow--ink">Galeria</p>
+            <h2>Trabalhos e bastidores</h2>
+            <p>Filtre por tipo de caso para ver lentes, fluxo digital e reabilitações.</p>
+          </header>
+
+          <div class="pf-filters" data-rise aria-label="Filtros de portfólio">
+            <button class="pf-filter is-active" type="button" data-filter="all">Todos</button>
+            <button class="pf-filter" type="button" data-filter="estetica">Lentes e facetas</button>
+            <button class="pf-filter" type="button" data-filter="digital">Digital e CAD/CAM</button>
+            <button class="pf-filter" type="button" data-filter="reabilitacao">Reabilitação</button>
+          </div>
+
+          <div class="pf-gallery">
+            <figure class="pf-item" data-category="estetica" data-rise>
+              <img src="img/imgi_114_619519307_18064658219264164_5947621331253144958_n.webp" alt="Lentes de contato em modelo de laboratório" loading="lazy" />
+              <figcaption class="pf-cap"><span>Lentes cerâmicas</span></figcaption>
+            </figure>
+            <figure class="pf-item" data-category="digital" data-rise>
+              <img src="img/imgi_62_625029170_18075098018372955_1499039004228475154_n.webp" alt="Planejamento 3D com modelo impresso" loading="lazy" />
+              <figcaption class="pf-cap"><span>Planejamento 3D</span></figcaption>
+            </figure>
+            <figure class="pf-item" data-category="estetica" data-rise>
+              <img src="img/imgi_101_625034602_18180539068371075_8348156054351154291_n.webp" alt="Facetas cerâmicas em bancada" loading="lazy" />
+              <figcaption class="pf-cap"><span>Facetas</span></figcaption>
+            </figure>
+            <figure class="pf-item" data-category="digital" data-rise>
+              <img src="img/imgi_50_624852293_18053909009409771_323376800176825270_n.webp" alt="Modelo impresso em processo digital" loading="lazy" />
+              <figcaption class="pf-cap"><span>Fluxo CAD/CAM</span></figcaption>
+            </figure>
+            <figure class="pf-item" data-category="estetica" data-rise>
+              <img src="img/imgi_29_619528286_17988651542762785_7259676243728801_n.webp" alt="Prótese estética em modelo" loading="lazy" />
+              <figcaption class="pf-cap"><span>Acabamento estético</span></figcaption>
+            </figure>
+            <figure class="pf-item" data-category="digital" data-rise>
+              <img src="img/imgi_65_623529719_18117893866523054_512887059471376165_n.webp" alt="Bloco de zircônia usinado" loading="lazy" />
+              <figcaption class="pf-cap"><span>Zircônia</span></figcaption>
+            </figure>
+            <figure class="pf-item" data-category="reabilitacao" data-rise>
+              <img src="img/imgi_95_650749380_18082666016033341_7036768201491491013_n.webp" alt="Estrutura para protocolo" loading="lazy" />
+              <figcaption class="pf-cap"><span>Protocolos</span></figcaption>
+            </figure>
+            <figure class="pf-item" data-category="estetica" data-rise>
+              <img src="img/imgi_61_624641559_18104416783837956_6975740218314101151_n.webp" alt="Lentes em modelo de gesso" loading="lazy" />
+              <figcaption class="pf-cap"><span>Textura e brilho</span></figcaption>
+            </figure>
+            <figure class="pf-item" data-category="reabilitacao" data-rise>
+              <img src="img/imgi_83_628125113_18153155575428375_719721808705908232_n.webp" alt="Peças de reabilitação em modelo" loading="lazy" />
+              <figcaption class="pf-cap"><span>Prótese fixa</span></figcaption>
+            </figure>
+            <figure class="pf-item" data-category="reabilitacao" data-rise>
+              <img src="img/imgi_76_649234604_18074470133393139_7124160041458349551_n.webp" alt="Registro clínico de resultado protético" loading="lazy" />
+              <figcaption class="pf-cap"><span>Documentação</span></figcaption>
+            </figure>
+            <figure class="pf-item" data-category="digital" data-rise>
+              <img src="img/imgi_47_639455932_18380583370094967_1538606091027531088_n.webp" alt="Etapa de produção digital no laboratório" loading="lazy" />
+              <figcaption class="pf-cap"><span>Produção digital</span></figcaption>
+            </figure>
+            <figure class="pf-item" data-category="reabilitacao" data-rise>
+              <img src="img/imgi_44_645584148_17974959179843500_8727359025417229887_n.webp" alt="Trabalho de reabilitação protética finalizado" loading="lazy" />
+              <figcaption class="pf-cap"><span>Caso reabilitado</span></figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ CTA ============ -->
+      <section class="lab-cta">
+        <div class="lab-shell lab-cta-inner">
+          <div class="lab-cta-lead">
+            <div class="lab-cta-seal" data-seal aria-hidden="true"></div>
+            <div class="lab-cta-text">
+              <h2>Acompanhe a rotina técnica<br />da Laborite no Instagram.</h2>
+              <p>Veja publicações, bastidores e trabalhos recentes — ou envie seu caso agora.</p>
+            </div>
+          </div>
+          <div class="lab-cta-actions">
+            <a class="lab-btn lab-btn--light" href="https://www.instagram.com/laborite.lab/" target="_blank" rel="noreferrer">
+              Abrir Instagram <svg class="lab-ic" viewBox="0 0 24 24"><use href="#ic-ig" /></svg>
+            </a>
+            <a class="lab-btn lab-btn--outline" href="#" data-whatsapp>
+              Falar no WhatsApp <svg class="lab-ic" viewBox="0 0 24 24"><use href="#ic-wa" /></svg>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ============ FOOTER ============ -->
+    <footer class="lab-footer">
+      <div class="lab-shell lab-footer-grid">
+        <div class="lab-footer-brand">
+          <a class="lab-brand lab-brand--dark" href="index.html" aria-label="Laborite Estética Dental">
+            <svg class="lab-mark" viewBox="0 0 100 110" aria-hidden="true"><use href="#ic-diamond" /></svg>
+            <span class="lab-word"><strong>LABORITE</strong><em>Estética Dental</em></span>
+          </a>
+          <p>Excelência em prótese dental com tecnologia digital, materiais premium e acabamento artesanal.</p>
+          <div class="lab-social">
+            <a href="https://www.instagram.com/laborite.lab/" target="_blank" rel="noreferrer" aria-label="Instagram"><svg viewBox="0 0 24 24"><use href="#ic-ig" /></svg></a>
+            <a href="#" data-whatsapp aria-label="WhatsApp"><svg viewBox="0 0 24 24"><use href="#ic-wa" /></svg></a>
+            <a href="#" data-email aria-label="E-mail"><svg viewBox="0 0 24 24"><use href="#ic-mail" /></svg></a>
+          </div>
+        </div>
+
+        <div class="lab-footer-col">
+          <h4>Contato</h4>
+          <a href="#" data-whatsapp><svg viewBox="0 0 24 24"><use href="#ic-phone" /></svg> (11) 99999-0000</a>
+          <a href="#" data-email><svg viewBox="0 0 24 24"><use href="#ic-mail" /></svg> contato@laborite.com.br</a>
+          <a href="https://www.instagram.com/laborite.lab/" target="_blank" rel="noreferrer"><svg viewBox="0 0 24 24"><use href="#ic-ig" /></svg> @laborite.lab</a>
+        </div>
+
+        <nav class="lab-footer-col" aria-label="Links rápidos">
+          <h4>Links rápidos</h4>
+          <a href="index.html">Home</a>
+          <a href="sobre.html">Sobre nós</a>
+          <a href="servicos.html">Soluções</a>
+          <a href="fluxo.html">Fluxo digital</a>
+          <a href="portfolio.html">Resultados</a>
+          <a href="contato.html">Contato</a>
+        </nav>
+
+        <div class="lab-footer-col">
+          <h4>Horário de atendimento</h4>
+          <p class="lab-hours"><strong>Segunda a sexta</strong><span>08h às 18h</span></p>
+          <p class="lab-hours"><strong>Sábado (sob consulta)</strong><span>08h às 12h</span></p>
+        </div>
+
+        <div class="lab-footer-seal" data-seal aria-hidden="true"></div>
+      </div>
+
+      <div class="lab-footer-bottom">
+        <div class="lab-shell lab-demo-note">
+          <span>Site demonstrativo criado para portfólio — marca, contatos e informações fictícios. Imagens meramente ilustrativas.</span>
+        </div>
+        <div class="lab-shell">
+          <span>© <span data-year></span> Laborite Estética Dental. Todos os direitos reservados.</span>
+          <span>Portfólio técnico e bastidores de produção.</span>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://unpkg.com/lenis@1.2.3/dist/lenis.min.js"></script>
+    <script defer src="js/main.js"></script>
+    <script defer src="js/home.js"></script>
+  </body>
+</html>

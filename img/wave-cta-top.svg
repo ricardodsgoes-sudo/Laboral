@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 160" preserveAspectRatio="none">
+  <!-- camada traseira (mais funda, menor opacidade) -->
+  <path fill="rgba(255,255,255,0.22)" d="M0 0H1440V100C1200 140 960 74 720 102C480 130 240 62 0 108Z"/>
+  <!-- camada intermediária -->
+  <path fill="rgba(255,255,255,0.50)" d="M0 0H1440V78C1200 118 960 52 720 80C480 108 240 40 0 86Z"/>
+  <!-- camada frontal (sólida branca — define onde o branco acima termina) -->
+  <path fill="#ffffff" d="M0 0H1440V56C1200 96 960 30 720 58C480 86 240 18 0 64Z"/>
+</svg>

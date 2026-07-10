@@ -1,0 +1,510 @@
+/* ============================================================
+   Laborite — página "Sobre nós". Estilos específicos.
+   Reaproveita css/home.css (tokens, header, footer, botões,
+   selo, .lab-cta, .lab-mosaic, reveal). Aqui só o que é novo.
+   ============================================================ */
+
+/* ---- Page hero (banner) -------------------------------------------- */
+
+.sb-hero {
+  position: relative;
+  overflow: hidden;
+  padding: var(--hero-pad);
+  background:
+    linear-gradient(104deg, rgba(6, 34, 56, 0.95) 0%, rgba(9, 47, 75, 0.86) 46%, rgba(12, 64, 100, 0.52) 100%),
+    url("../img/imgi_62_625029170_18075098018372955_1499039004228475154_n.webp") center 48% / cover no-repeat;
+  color: var(--white);
+  text-align: center;
+}
+
+.sb-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(60% 80% at 85% 10%, rgba(255, 255, 255, 0.1), transparent 60%),
+    radial-gradient(50% 70% at 5% 100%, rgba(0, 0, 0, 0.18), transparent 60%);
+  pointer-events: none;
+}
+
+.sb-hero-inner {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  justify-items: center;
+  gap: 0;
+}
+
+.sb-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 18px;
+  font-size: 0.74rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.sb-eyebrow::before,
+.sb-eyebrow::after {
+  content: "";
+  width: 26px;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.sb-hero h1 {
+  max-width: 17ch;
+  text-transform: uppercase;
+  color: var(--white);
+  font-size: clamp(2rem, 4.4vw, 3.5rem);
+  font-weight: 700;
+  line-height: 1.08;
+  letter-spacing: -0.01em;
+}
+
+.sb-hero p {
+  max-width: 56ch;
+  margin-top: 22px;
+  color: rgba(255, 255, 255, 0.86);
+  font-size: clamp(1rem, 1.4vw, 1.15rem);
+  font-weight: 300;
+  line-height: 1.7;
+}
+
+.sb-hero-seal {
+  position: absolute;
+  right: -60px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: clamp(220px, 30vw, 380px);
+  color: rgba(255, 255, 255, 0.14);
+  z-index: 1;
+}
+
+/* ---- Quem somos (split) -------------------------------------------- */
+
+.sb-about {
+  padding: clamp(60px, 7vw, 100px) 0;
+  background: var(--white);
+}
+
+.sb-about-grid {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: clamp(36px, 5vw, 76px);
+  align-items: center;
+}
+
+.sb-about-copy .lab-head {
+  margin-bottom: 22px;
+}
+
+.sb-eyebrow--ink {
+  color: var(--blue);
+}
+
+.sb-eyebrow--ink::before {
+  background: var(--blue);
+}
+
+.sb-eyebrow--ink::after {
+  display: none;
+}
+
+.sb-about-copy p + p {
+  margin-top: 14px;
+}
+
+.sb-about-copy p {
+  color: var(--body);
+  line-height: 1.75;
+}
+
+.sb-bullets {
+  margin: 26px 0 30px;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 13px;
+}
+
+.sb-bullets li {
+  display: flex;
+  align-items: flex-start;
+  gap: 13px;
+  color: var(--ink);
+  font-size: 0.96rem;
+}
+
+.sb-check {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 26px;
+  height: 26px;
+  margin-top: 1px;
+  border-radius: 50%;
+  background: rgba(22, 101, 150, 0.1);
+  color: var(--blue);
+}
+
+.sb-check svg {
+  width: 15px;
+  height: 15px;
+}
+
+.sb-about-media {
+  position: relative;
+}
+
+.sb-about-media img {
+  width: 100%;
+  aspect-ratio: 5 / 5.4;
+  object-fit: cover;
+  border-radius: 18px;
+  box-shadow: 0 30px 60px rgba(12, 52, 82, 0.18);
+}
+
+.sb-about-media::after {
+  content: "";
+  position: absolute;
+  left: -22px;
+  bottom: -22px;
+  width: 130px;
+  height: 130px;
+  border: 2px solid rgba(22, 101, 150, 0.2);
+  border-radius: 16px;
+  z-index: -1;
+}
+
+.sb-about-badge {
+  position: absolute;
+  right: -18px;
+  top: 28px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 18px;
+  background: var(--white);
+  border-radius: 14px;
+  box-shadow: var(--shadow-card);
+}
+
+.sb-about-badge svg {
+  width: 30px;
+  height: 33px;
+  color: var(--blue);
+}
+
+.sb-about-badge span {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+/* ---- Stats --------------------------------------------------------- */
+
+.sb-stats {
+  position: relative;
+  overflow: hidden;
+  background: var(--blue);
+  background: linear-gradient(120deg, var(--blue-deep), var(--blue) 70%, var(--blue-bright));
+  color: var(--white);
+}
+
+/* onda do topo removida — borda reta */
+.sb-stats::before {
+  display: none;
+}
+
+/* onda soft na base (entrando em sb-why soft) */
+.sb-stats::after {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  left: -2px;
+  right: -2px;
+  height: clamp(52px, 6.5vw, 96px);
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 160' preserveAspectRatio='none'%3E%3Cpath fill='rgba(238%2C244%2C248%2C0.22)' d='M0 160V60C240 18 520 6 720 34C940 62 1200 80 1440 44V160H0Z'/%3E%3Cpath fill='rgba(238%2C244%2C248%2C0.50)' d='M0 160V82C240 40 520 28 720 56C940 84 1200 102 1440 66V160H0Z'/%3E%3Cpath fill='%23eef4f8' d='M0 160V104C240 62 520 50 720 78C940 106 1200 124 1440 88V160H0Z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: 100% 100%;
+}
+
+.sb-stats-grid {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  padding: clamp(48px, 5vw, 72px) 0 clamp(76px, 9vw, 116px);
+  gap: 24px;
+}
+
+.sb-stat {
+  text-align: center;
+  position: relative;
+}
+
+.sb-stat + .sb-stat::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 56px;
+  width: 1px;
+  background: rgba(255, 255, 255, 0.18);
+}
+
+.sb-stat strong {
+  display: block;
+  font-size: clamp(2rem, 3.6vw, 3rem);
+  font-weight: 700;
+  line-height: 1;
+}
+
+.sb-stat span {
+  display: block;
+  margin-top: 10px;
+  font-size: 0.82rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.82);
+}
+
+/* ---- Por que escolher (cards com ícone) ---------------------------- */
+
+.sb-why {
+  position: relative;
+  overflow: hidden;
+  padding: clamp(60px, 7vw, 100px) 0 clamp(112px, 12vw, 168px);
+  background: var(--soft);
+}
+
+.sb-why .lab-shell {
+  position: relative;
+  z-index: 1;
+}
+
+/* onda branca na base (entrando em sb-lab branco) */
+.sb-why::after {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  left: -2px;
+  right: -2px;
+  height: clamp(68px, 8vw, 128px);
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 1440 128' preserveAspectRatio='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 128V72C236 36 454 36 720 60C940 84 1200 108 1440 72V128H0Z' fill='%23ffffff'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: 100% 100%;
+}
+
+.sb-why .lab-head {
+  text-align: center;
+  margin: 0 auto clamp(36px, 4vw, 56px);
+}
+
+.sb-why-cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.sb-feature {
+  padding: 32px 26px;
+  background: var(--white);
+  border-radius: var(--r);
+  box-shadow: var(--shadow-card);
+  transition: transform 0.3s var(--ease), box-shadow 0.3s var(--ease);
+}
+
+.sb-feature:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 28px 56px rgba(12, 52, 82, 0.16);
+}
+
+.sb-feature-ic {
+  display: grid;
+  place-items: center;
+  width: 58px;
+  height: 58px;
+  margin-bottom: 20px;
+  border-radius: 16px;
+  background: linear-gradient(140deg, rgba(42, 134, 192, 0.14), rgba(22, 101, 150, 0.12));
+  color: var(--blue);
+  transition: transform 0.35s var(--ease);
+}
+
+.sb-feature:hover .sb-feature-ic {
+  transform: translateY(-4px) rotate(-4deg);
+}
+
+.sb-feature-ic svg {
+  width: 30px;
+  height: 32px;
+}
+
+.sb-feature h3 {
+  color: var(--ink);
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+  line-height: 1.3;
+}
+
+.sb-feature p {
+  color: var(--body);
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+/* ---- Bastidores (texto + mosaico + blocos) ------------------------- */
+
+.sb-lab {
+  padding: clamp(60px, 7vw, 100px) 0;
+  background: var(--white);
+}
+
+.sb-lab-top {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: clamp(36px, 5vw, 72px);
+  align-items: center;
+  margin-bottom: clamp(36px, 4vw, 56px);
+}
+
+.sb-lab-top .lab-head {
+  margin-bottom: 18px;
+}
+
+.sb-lab-top p {
+  color: var(--body);
+  line-height: 1.75;
+}
+
+.sb-lab-top p + p {
+  margin-top: 14px;
+}
+
+.sb-blocks {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 22px;
+  border-top: 1px solid var(--line);
+  padding-top: clamp(32px, 4vw, 48px);
+}
+
+.sb-block {
+  display: grid;
+  gap: 10px;
+}
+
+.sb-block-ic {
+  display: grid;
+  place-items: center;
+  width: 46px;
+  height: 46px;
+  border-radius: 12px;
+  border: 1.5px solid var(--line);
+  color: var(--blue);
+}
+
+.sb-block-ic svg {
+  width: 24px;
+  height: 26px;
+}
+
+.sb-block h4 {
+  color: var(--ink);
+  font-size: 0.98rem;
+  font-weight: 600;
+}
+
+.sb-block p {
+  color: var(--body);
+  font-size: 0.88rem;
+  line-height: 1.6;
+}
+
+/* ---- Responsivo ----------------------------------------------------- */
+
+@media (max-width: 1024px) {
+  .sb-about-grid,
+  .sb-lab-top {
+    grid-template-columns: 1fr;
+  }
+
+  .sb-about-media {
+    max-width: 520px;
+  }
+
+  .sb-stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 36px 24px;
+  }
+
+  .sb-stat:nth-child(3)::before {
+    display: none;
+  }
+
+  .sb-why-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .sb-blocks {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 28px 22px;
+  }
+
+  /* Mantém o diamante girando visível no mobile: centralizado e baixo na
+     hero (acima da onda), faível como decoração. Sem transform p/ não
+     conflitar com o parallax (que é desligado no mobile de qualquer forma). */
+  .sb-hero-seal {
+    top: auto;
+    bottom: clamp(74px, 18vw, 120px);
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    transform: none;
+    width: clamp(150px, 42vw, 210px);
+    color: rgba(255, 255, 255, 0.22);
+  }
+}
+
+@media (max-width: 620px) {
+  :root {
+    --shell: calc(100vw - 28px);
+  }
+
+  .sb-why-cards,
+  .sb-blocks {
+    grid-template-columns: 1fr;
+  }
+
+  .sb-stats-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 28px 16px;
+  }
+
+  .sb-stat::before {
+    display: none !important;
+  }
+
+  .sb-about-badge {
+    right: 10px;
+  }
+}
+
+@media (max-width: 400px) {
+  .sb-stats-grid {
+    grid-template-columns: 1fr;
+  }
+}

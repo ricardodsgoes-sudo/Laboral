@@ -1,0 +1,675 @@
+/* ============================================================
+   Laborite — página "Fluxo digital". Estilos próprios.
+   Reaproveita css/home.css (tokens, header, footer, botões,
+   selo, .lab-wave, .lab-cta, reveal, parallax). Aqui só o novo.
+   ============================================================ */
+
+/* ---- Page hero (com imagem de fundo + véu azul) -------------------- */
+
+.fx-hero {
+  --mask-x: 50%;
+  --mask-y: 50%;
+  --mask-r: 0px;
+  position: relative;
+  overflow: hidden;
+  padding: var(--hero-pad);
+  background:
+    linear-gradient(112deg, #082840 0%, #0c3a59 48%, #145f8e 100%),
+    var(--navy);
+  color: var(--white);
+}
+
+.fx-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg, rgba(4, 22, 37, 0.44) 0%, rgba(4, 22, 37, 0) 58%),
+    radial-gradient(80% 92% at 82% 18%, rgba(255, 255, 255, 0.16), transparent 56%),
+    radial-gradient(54% 70% at 12% 92%, rgba(42, 134, 192, 0.18), transparent 62%);
+  pointer-events: none;
+}
+
+.fx-hero-inner {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: minmax(0, 0.92fr) minmax(260px, 0.72fr);
+  align-items: center;
+  gap: clamp(36px, 6vw, 84px);
+}
+
+.fx-hero-copy {
+  max-width: 610px;
+}
+
+.fx-hero h1 {
+  text-transform: uppercase;
+  color: var(--white);
+  font-size: clamp(2rem, 4vw, 3.45rem);
+  font-weight: 700;
+  line-height: 1.08;
+  letter-spacing: 0;
+  margin-bottom: 22px;
+}
+
+.fx-hero-sub {
+  max-width: 54ch;
+  color: rgba(255, 255, 255, 0.88);
+  font-size: clamp(1rem, 1.4vw, 1.12rem);
+  font-weight: 300;
+  line-height: 1.7;
+  margin-bottom: 34px;
+}
+
+.fx-hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.fx-hero-mask-bg {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.fx-hero-mask-bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  background: radial-gradient(ellipse 65vw 100% at 0% 50%, rgba(12, 58, 89, 0.88) 0%, rgba(12, 58, 89, 0.78) 45%, rgba(12, 58, 89, 0.45) 70%, transparent 100%);
+}
+
+.fx-mask-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 18% 50%; /* Deslocado generosamente para a direita para afastar os dentes do texto */
+}
+
+.fx-mask-img--base {
+  z-index: 1;
+  /* filter: saturate(0.42) contrast(1.04) brightness(0.52) hue-rotate(176deg); - Ocultado para testar imagem crua */
+  transform: scale(1.05);
+}
+
+.fx-mask-img--reveal {
+  z-index: 3;
+  opacity: 0;
+  /* filter: saturate(1.3) contrast(1.08) brightness(1.02); - Ocultado para testar imagem crua */
+  transform: scale(1.05);
+  mask-image: 
+    radial-gradient(ellipse calc(var(--mask-r) * 1.3) calc(var(--mask-r) * 0.9) at var(--mask-x) var(--mask-y), #000 0%, rgba(0, 0, 0, 0.8) 25%, rgba(0, 0, 0, 0.2) 65%, transparent 100%),
+    radial-gradient(ellipse calc(var(--mask-r) * 0.9) calc(var(--mask-r) * 1.3) at var(--mask-x) var(--mask-y), #000 0%, rgba(0, 0, 0, 0.8) 25%, rgba(0, 0, 0, 0.2) 65%, transparent 100%);
+  -webkit-mask-image: 
+    radial-gradient(ellipse calc(var(--mask-r) * 1.3) calc(var(--mask-r) * 0.9) at var(--mask-x) var(--mask-y), #000 0%, rgba(0, 0, 0, 0.8) 25%, rgba(0, 0, 0, 0.2) 65%, transparent 100%),
+    radial-gradient(ellipse calc(var(--mask-r) * 0.9) calc(var(--mask-r) * 1.3) at var(--mask-x) var(--mask-y), #000 0%, rgba(0, 0, 0, 0.8) 25%, rgba(0, 0, 0, 0.2) 65%, transparent 100%);
+  will-change: mask-image, -webkit-mask-image, opacity;
+  transition: opacity 0.28s var(--ease);
+}
+
+.fx-mask-glow {
+  position: absolute;
+  inset: 0;
+  z-index: 4;
+  opacity: 0;
+  pointer-events: none;
+  background: 
+    radial-gradient(ellipse calc(var(--mask-r) * 1.3) calc(var(--mask-r) * 0.9) at var(--mask-x) var(--mask-y), rgba(255, 255, 255, 0.22) 0%, rgba(73, 169, 224, 0.12) 40%, transparent 80%),
+    radial-gradient(ellipse calc(var(--mask-r) * 0.9) calc(var(--mask-r) * 1.3) at var(--mask-x) var(--mask-y), rgba(255, 255, 255, 0.22) 0%, rgba(73, 169, 224, 0.12) 40%, transparent 80%);
+  mask-image: 
+    radial-gradient(ellipse calc(var(--mask-r) * 1.3) calc(var(--mask-r) * 0.9) at var(--mask-x) var(--mask-y), #000 0%, transparent 100%),
+    radial-gradient(ellipse calc(var(--mask-r) * 0.9) calc(var(--mask-r) * 1.3) at var(--mask-x) var(--mask-y), #000 0%, transparent 100%);
+  -webkit-mask-image: 
+    radial-gradient(ellipse calc(var(--mask-r) * 1.3) calc(var(--mask-r) * 0.9) at var(--mask-x) var(--mask-y), #000 0%, transparent 100%),
+    radial-gradient(ellipse calc(var(--mask-r) * 0.9) calc(var(--mask-r) * 1.3) at var(--mask-x) var(--mask-y), #000 0%, transparent 100%);
+  mix-blend-mode: screen;
+  transition: opacity 0.28s var(--ease);
+}
+
+.fx-hero.is-active .fx-mask-img--reveal {
+  opacity: 1;
+}
+
+.fx-hero.is-active .fx-mask-glow {
+  opacity: 0; /* Desativado para testar imagens cruas */
+}
+
+/* ---- Custom high-tech cursor ---- */
+@media (hover: hover) and (pointer: fine) {
+  .fx-hero {
+    cursor: none;
+  }
+  .fx-hero a,
+  .fx-hero button,
+  .fx-hero [role="button"],
+  .lab-header {
+    cursor: auto;
+  }
+}
+
+.fx-mask-cursor {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 56px;
+  height: 56px;
+  margin-left: -28px;
+  margin-top: -28px;
+  border: 1px dashed rgba(255, 255, 255, 0.45);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 10;
+  opacity: 0;
+  transform: translate3d(var(--mask-x), var(--mask-y), 0) scale(0.5);
+  transition: opacity 0.3s var(--ease), transform 0.3s var(--ease);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.fx-mask-cursor::after {
+  content: "";
+  position: absolute;
+  inset: 6px;
+  border: 1.5px solid var(--white);
+  border-radius: 50%;
+  opacity: 0.85;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.25);
+}
+
+.fx-mask-cursor::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  background: var(--white);
+  border-radius: 50%;
+  box-shadow: 0 0 6px var(--white);
+}
+
+.fx-hero.is-active .fx-mask-cursor {
+  opacity: 1;
+  transform: translate3d(var(--mask-x), var(--mask-y), 0) scale(1);
+}
+
+/* Esconde o cursor customizado ao passar por cima de botões */
+.fx-hero:has(a:hover) .fx-mask-cursor,
+.fx-hero:has(button:hover) .fx-mask-cursor {
+  opacity: 0;
+  transform: translate3d(var(--mask-x), var(--mask-y), 0) scale(0.3);
+}
+
+.fx-hero-seal {
+  justify-self: end;
+  width: clamp(210px, 25vw, 330px);
+  color: rgba(255, 255, 255, 0.72);
+  will-change: transform;
+  pointer-events: none;
+}
+
+/* ---- Eyebrow ------------------------------------------------------- */
+
+.fx-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 18px;
+  font-size: 0.74rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.fx-eyebrow::before,
+.fx-eyebrow::after {
+  content: "";
+  width: 26px;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.fx-eyebrow--ink {
+  color: var(--blue);
+}
+
+.fx-eyebrow--ink::before,
+.fx-eyebrow--ink::after {
+  background: var(--blue);
+}
+
+/* ---- Por que o fluxo importa (cards de ícone) ---------------------- */
+
+.fx-why {
+  position: relative;
+  overflow: hidden;
+  padding: clamp(58px, 7vw, 100px) 0 clamp(112px, 12vw, 164px);
+  background: var(--white);
+}
+
+.fx-why .lab-shell {
+  position: relative;
+  z-index: 1;
+}
+
+/* onda soft na base (entrando em fx-steps soft) */
+.fx-why::after {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  left: -2px;
+  right: -2px;
+  height: clamp(68px, 8vw, 128px);
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 1440 128' preserveAspectRatio='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 128V54C236 84 454 84 654 60C854 36 1050 22 1440 50V128H0Z' fill='%23eef4f8'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: 100% 100%;
+}
+
+.fx-why .lab-head {
+  margin: 0 auto clamp(38px, 4.5vw, 58px);
+}
+
+.fx-why-cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.fx-feature {
+  padding: 30px 24px;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: var(--r);
+  box-shadow: var(--shadow-card);
+  transition: transform 0.3s var(--ease), box-shadow 0.3s var(--ease);
+}
+
+.fx-feature:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 28px 56px rgba(12, 52, 82, 0.16);
+}
+
+.fx-feature-ic {
+  display: grid;
+  place-items: center;
+  width: 56px;
+  height: 56px;
+  margin-bottom: 18px;
+  border-radius: 15px;
+  background: linear-gradient(140deg, rgba(42, 134, 192, 0.14), rgba(22, 101, 150, 0.12));
+  color: var(--blue);
+  transition: transform 0.35s var(--ease);
+}
+
+.fx-feature:hover .fx-feature-ic {
+  transform: translateY(-4px) rotate(-4deg);
+}
+
+.fx-feature-ic svg {
+  width: 28px;
+  height: 30px;
+}
+
+.fx-feature h3 {
+  margin-bottom: 9px;
+  color: var(--ink);
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.fx-feature p {
+  color: var(--body);
+  font-size: 0.88rem;
+  line-height: 1.6;
+}
+
+/* ---- Etapas do fluxo (cards numerados) ----------------------------- */
+
+.fx-steps {
+  position: relative;
+  overflow: hidden;
+  padding: clamp(58px, 7vw, 100px) 0 clamp(112px, 12vw, 164px);
+  background: var(--soft);
+}
+
+.fx-steps .lab-shell {
+  position: relative;
+  z-index: 1;
+}
+
+/* onda branca na base (entrando em fx-send branco) */
+.fx-steps::after {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  left: -2px;
+  right: -2px;
+  height: clamp(68px, 8vw, 128px);
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 1440 128' preserveAspectRatio='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 128V72C236 36 454 36 720 60C940 84 1200 108 1440 72V128H0Z' fill='%23ffffff'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: 100% 100%;
+}
+
+.fx-steps .lab-head {
+  margin: 0 auto clamp(40px, 4.5vw, 60px);
+}
+
+.fx-steps-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: fx;
+}
+
+.fx-step {
+  position: relative;
+  padding: 32px 26px 28px;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: var(--r);
+  box-shadow: var(--shadow-card);
+  transition: transform 0.3s var(--ease), box-shadow 0.3s var(--ease);
+}
+
+.fx-step:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 28px 56px rgba(12, 52, 82, 0.16);
+}
+
+.fx-step-num {
+  position: absolute;
+  top: 22px;
+  right: 24px;
+  font-size: 2.4rem;
+  font-weight: 700;
+  line-height: 1;
+  color: rgba(22, 101, 150, 0.14);
+}
+
+.fx-step-ic {
+  display: grid;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  margin-bottom: 18px;
+  border-radius: 14px;
+  background: linear-gradient(140deg, var(--blue-bright), var(--blue));
+  color: var(--white);
+  box-shadow: 0 10px 22px rgba(22, 101, 150, 0.3);
+  transition: transform 0.35s var(--ease);
+}
+
+.fx-step:hover .fx-step-ic {
+  transform: translateY(-4px) rotate(-4deg);
+}
+
+.fx-step-ic svg {
+  width: 28px;
+  height: 30px;
+}
+
+.fx-step h3 {
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  color: var(--blue);
+  font-size: 0.98rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.fx-step p {
+  color: var(--body);
+  font-size: 0.88rem;
+  line-height: 1.62;
+}
+
+/* ---- O que enviar (split + checklist) ------------------------------ */
+
+.fx-send {
+  position: relative;
+  overflow: hidden;
+  padding: clamp(58px, 7vw, 100px) 0 clamp(112px, 12vw, 164px);
+  background: var(--white);
+}
+
+.fx-send .lab-shell {
+  position: relative;
+  z-index: 1;
+}
+
+/* onda soft na base (entrando em fx-tech soft) */
+.fx-send::after {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  left: -2px;
+  right: -2px;
+  height: clamp(68px, 8vw, 128px);
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 1440 128' preserveAspectRatio='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 128V54C236 84 454 84 654 60C854 36 1050 22 1440 50V128H0Z' fill='%23eef4f8'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: 100% 100%;
+}
+
+.fx-send-inner {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: clamp(30px, 4vw, 60px);
+  align-items: center;
+}
+
+.fx-send-copy .lab-head {
+  margin-bottom: 18px;
+}
+
+.fx-send-note {
+  max-width: 42ch;
+  margin-bottom: 26px;
+  color: var(--body);
+  line-height: 1.7;
+}
+
+.fx-checklist {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px 22px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.fx-checklist li,
+.fx-bullets li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  color: var(--ink);
+  font-size: 0.94rem;
+  line-height: 1.4;
+}
+
+.fx-check {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 26px;
+  height: 26px;
+  margin-top: 1px;
+  border-radius: 50%;
+  background: rgba(22, 101, 150, 0.1);
+  color: var(--blue);
+}
+
+.fx-check svg {
+  width: 15px;
+  height: 15px;
+}
+
+/* ---- Tecnologia + olhar humano (split com imagem) ------------------ */
+
+.fx-tech {
+  padding: clamp(58px, 7vw, 100px) 0;
+  background: var(--soft);
+}
+
+.fx-tech-grid {
+  display: grid;
+  grid-template-columns: 0.95fr 1.05fr;
+  gap: clamp(34px, 5vw, 72px);
+  align-items: center;
+}
+
+.fx-tech-media {
+  position: relative;
+}
+
+.fx-tech-media img {
+  width: 100%;
+  aspect-ratio: 5 / 4.4;
+  object-fit: cover;
+  border-radius: 18px;
+  box-shadow: 0 30px 60px rgba(12, 52, 82, 0.18);
+}
+
+.fx-tech-media::after {
+  content: "";
+  position: absolute;
+  right: -20px;
+  bottom: -20px;
+  width: 120px;
+  height: 120px;
+  border: 2px solid rgba(22, 101, 150, 0.2);
+  border-radius: 16px;
+  z-index: -1;
+}
+
+.fx-tech-copy .lab-head {
+  margin-bottom: 16px;
+}
+
+.fx-tech-copy p {
+  color: var(--body);
+  line-height: 1.75;
+}
+
+.fx-tech-copy p + p {
+  margin-top: 14px;
+}
+
+.fx-bullets {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 13px 22px;
+  margin: 26px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* ---- Responsivo ----------------------------------------------------- */
+
+@media (max-width: 1024px) {
+  .fx-hero-inner {
+    grid-template-columns: 1fr;
+  }
+
+  .fx-hero-copy {
+    max-width: 720px;
+  }
+
+  .fx-hero-seal {
+    display: none;
+  }
+
+  .fx-why-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .fx-steps-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .fx-send-inner,
+  .fx-tech-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .fx-tech-media {
+    max-width: 540px;
+  }
+}
+
+@media (max-width: 620px) {
+  :root {
+    --shell: calc(100vw - 28px);
+  }
+
+  .fx-hero-inner,
+  .fx-hero-copy {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .fx-hero-mask-bg::before {
+    background: linear-gradient(180deg, rgba(12, 58, 89, 0.85) 0%, rgba(12, 58, 89, 0.6) 75%, transparent 100%);
+  }
+
+  .fx-hero-inner {
+    padding-inline: 18px;
+  }
+
+  .fx-hero h1 {
+    max-width: 11ch;
+    font-size: 1.86rem;
+    line-height: 1.14;
+    overflow-wrap: anywhere;
+  }
+
+  .fx-hero-sub {
+    max-width: 30ch;
+    font-size: 0.98rem;
+  }
+
+  .fx-hero-actions {
+    max-width: 330px;
+  }
+
+  .fx-hero-actions .lab-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .fx-mask-img--reveal,
+  .fx-mask-glow {
+    display: none;
+  }
+
+  .fx-mask-img--base {
+    filter: saturate(0.58) contrast(1.02) brightness(0.58) hue-rotate(176deg);
+  }
+
+  .fx-why-cards,
+  .fx-steps-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .fx-checklist,
+  .fx-bullets {
+    grid-template-columns: 1fr;
+  }
+}

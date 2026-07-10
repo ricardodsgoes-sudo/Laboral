@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 160" preserveAspectRatio="none">
+  <!-- camada traseira (mais alta, menor opacidade) -->
+  <path fill="rgba(255,255,255,0.22)" d="M0 160V60C240 18 520 6 720 34C940 62 1200 80 1440 44V160H0Z"/>
+  <!-- camada intermediária -->
+  <path fill="rgba(255,255,255,0.50)" d="M0 160V82C240 40 520 28 720 56C940 84 1200 102 1440 66V160H0Z"/>
+  <!-- camada frontal (sólida branca — o rodapé branco começa aqui) -->
+  <path fill="#ffffff" d="M0 160V104C240 62 520 50 720 78C940 106 1200 124 1440 88V160H0Z"/>
+</svg>

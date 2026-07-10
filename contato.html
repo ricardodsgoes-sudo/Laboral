@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Contato | Laborite Estética Dental</title>
+    <meta
+      name="description"
+      content="Fale com a Laborite Estética Dental por WhatsApp, e-mail, Instagram ou formulário. Envie seu caso e receba orientação do laboratório."
+    />
+    <link rel="icon" href="favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://unpkg.com/lenis@1.2.3/dist/lenis.css" />
+    <link rel="stylesheet" href="css/home.css" />
+    <link rel="stylesheet" href="css/contato.css" />
+  </head>
+  <body class="lab">
+    <!-- ============ SVG sprite ============ -->
+    <svg width="0" height="0" aria-hidden="true" style="position: absolute">
+      <symbol id="ic-diamond" viewBox="0 0 100 110">
+        <path d="M30 28 L70 28 L88 48 L50 102 L12 48 Z M12 48 L88 48" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linejoin="round" />
+        <path d="M30 28 L36 48 M50 28 L36 48 M50 28 L64 48 M70 28 L64 48 M50 28 L50 48 M36 48 L50 102 M50 48 L50 102 M64 48 L50 102" fill="none" stroke="currentColor" stroke-width="2.2" />
+      </symbol>
+      <symbol id="ic-send" viewBox="0 0 24 24">
+        <path d="M22 2 L11 13 M22 2 L15 22 L11 13 L2 9 Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+      </symbol>
+      <symbol id="ic-ig" viewBox="0 0 24 24">
+        <rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="2" />
+        <circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2" />
+        <circle cx="17.5" cy="6.5" r="1.4" fill="currentColor" />
+      </symbol>
+      <symbol id="ic-wa" viewBox="0 0 24 24">
+        <path d="M12 2 a10 10 0 0 0 -8.5 15.2 L2 22 l4.9 -1.5 A10 10 0 1 0 12 2 Z" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round" />
+        <path d="M8.5 7.5 c-.5 0 -1 .2 -1.3 .9 c-.4 .9 -.5 2.6 1.2 4.7 c1.8 2.2 3.7 3 4.9 3.2 c1.2 .2 2 -.2 2.4 -.8 c.3 -.5 .3 -1 .2 -1.2 c-.1 -.2 -1.7 -1 -2 -1.1 c-.3 -.1 -.5 0 -.7 .3 l-.5 .7 c-.2 .2 -.3 .2 -.6 .1 c-.8 -.4 -1.6 -.9 -2.4 -2 c-.2 -.3 0 -.5 .1 -.7 l.4 -.6 c.1 -.2 0 -.4 0 -.6 c-.1 -.2 -.6 -1.6 -.9 -2 c-.2 -.3 -.4 -.3 -.5 -.3 Z" fill="currentColor" />
+      </symbol>
+      <symbol id="ic-mail" viewBox="0 0 24 24">
+        <rect x="3" y="5" width="18" height="14" rx="2.5" fill="none" stroke="currentColor" stroke-width="2" />
+        <path d="M4 7 L12 13 L20 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+      </symbol>
+      <symbol id="ic-phone" viewBox="0 0 24 24">
+        <path d="M6 3 h3 l2 5 -2.5 1.5 a11 11 0 0 0 5 5 L21 13 v3 a2 2 0 0 1 -2 2 A16 16 0 0 1 4 5 a2 2 0 0 1 2 -2 Z" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round" />
+      </symbol>
+    </svg>
+
+    <template id="seal-tpl">
+      <svg class="seal" viewBox="0 0 200 200" aria-hidden="true">
+        <defs>
+          <path id="seal-arc" d="M100,100 m-75,0 a75,75 0 1,1 150,0 a75,75 0 1,1 -150,0" fill="none" />
+        </defs>
+        <g class="seal-ring">
+          <text>
+            <textPath href="#seal-arc" startOffset="0" textLength="471" lengthAdjust="spacing">
+              LABORITE · ESTÉTICA DENTAL · LABORITE · ESTÉTICA DENTAL ·
+            </textPath>
+          </text>
+        </g>
+        <use class="seal-gem" href="#ic-diamond" x="66" y="60" width="68" height="80" />
+      </svg>
+    </template>
+
+    <!-- ============ HEADER ============ -->
+    <header class="lab-header lab-header--solid">
+      <div class="lab-shell lab-header-inner">
+        <a class="lab-brand" href="index.html" aria-label="Laborite Estética Dental — início">
+          <svg class="lab-mark" viewBox="0 0 100 110" aria-hidden="true"><use href="#ic-diamond" /></svg>
+          <span class="lab-word"><strong>LABORITE</strong><em>Estética Dental</em></span>
+        </a>
+        <button class="nav-toggle" type="button" aria-label="Abrir menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+        <nav class="nav-links" aria-label="Navegação principal">
+          <a href="index.html">Home</a>
+          <a href="sobre.html">Sobre nós</a>
+          <a href="servicos.html">Soluções</a>
+          <a href="fluxo.html">Fluxo digital</a>
+          <a href="portfolio.html">Resultados</a>
+          <a class="is-active" href="contato.html">Contato</a>
+          <a class="lab-btn lab-btn--ghost lab-nav-cta" href="#" data-whatsapp>
+            Enviar caso <svg class="lab-ic" viewBox="0 0 24 24"><use href="#ic-send" /></svg>
+          </a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <!-- ============ HERO ============ -->
+      <section class="ct-hero">
+        <div class="lab-shell ct-hero-inner">
+          <div class="ct-hero-copy">
+            <p class="ct-eyebrow">Contato e parceria</p>
+            <h1>Envie seu caso ou fale com a Laborite.</h1>
+            <p>
+              Use o WhatsApp para resposta direta ou preencha o formulário para abrir seu e-mail
+              com as informações do caso já organizadas.
+            </p>
+            <div class="ct-hero-actions">
+              <a class="lab-btn lab-btn--fill" href="#" data-whatsapp>
+                Falar no WhatsApp <svg class="lab-ic" viewBox="0 0 24 24"><use href="#ic-wa" /></svg>
+              </a>
+              <a class="lab-btn lab-btn--outline" href="#" data-email>
+                Enviar e-mail <svg class="lab-ic" viewBox="0 0 24 24"><use href="#ic-mail" /></svg>
+              </a>
+            </div>
+          </div>
+          <div class="ct-hero-seal" data-seal data-depth="0.05"></div>
+        </div>
+        <svg class="lab-wave" viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true">
+          <path d="M0,120 L0,64 C280,8 560,8 720,40 C900,76 1160,108 1440,40 L1440,120 Z" fill="#ffffff" />
+        </svg>
+      </section>
+
+      <!-- ============ CANAIS + FORMULÁRIO ============ -->
+      <section class="ct-section" id="contato">
+        <div class="lab-shell ct-grid">
+          <div class="ct-info" data-rise>
+            <header class="lab-head">
+              <p class="ct-eyebrow ct-eyebrow--ink">Canais</p>
+              <h2>Atendimento direto para dentistas e clínicas.</h2>
+            </header>
+            <p class="ct-info-lead">
+              Informe o tipo de caso, material desejado, prazo e envie referências quando tiver.
+            </p>
+
+            <div class="ct-channels">
+              <a class="ct-channel" href="#" data-whatsapp>
+                <span class="ct-channel-ic"><svg viewBox="0 0 24 24"><use href="#ic-wa" /></svg></span>
+                <span class="ct-channel-meta"><strong>WhatsApp</strong><span>(11) 99999-0000</span></span>
+              </a>
+              <a class="ct-channel" href="#" data-email>
+                <span class="ct-channel-ic"><svg viewBox="0 0 24 24"><use href="#ic-mail" /></svg></span>
+                <span class="ct-channel-meta"><strong>E-mail</strong><span>contato@laborite.com.br</span></span>
+              </a>
+              <a class="ct-channel" href="https://www.instagram.com/laborite.lab/" target="_blank" rel="noreferrer">
+                <span class="ct-channel-ic"><svg viewBox="0 0 24 24"><use href="#ic-ig" /></svg></span>
+                <span class="ct-channel-meta"><strong>Instagram</strong><span>@laborite.lab</span></span>
+              </a>
+            </div>
+
+            <div class="ct-hours">
+              <h4>Horário de atendimento</h4>
+              <p><strong>Segunda a sexta</strong><span>08h às 18h</span></p>
+              <p><strong>Sábado (sob consulta)</strong><span>08h às 12h</span></p>
+            </div>
+          </div>
+
+          <div class="ct-form-card" data-rise>
+            <form class="ct-form" data-contact-form>
+              <div class="ct-field">
+                <label for="name">Nome</label>
+                <input id="name" name="name" type="text" autocomplete="name" placeholder="Seu nome ou clínica" required />
+              </div>
+              <div class="ct-field">
+                <label for="phone">WhatsApp</label>
+                <input id="phone" name="phone" type="tel" autocomplete="tel" placeholder="DDD + número" required />
+              </div>
+              <div class="ct-field">
+                <label for="service">Interesse</label>
+                <select id="service" name="service" required>
+                  <option value="">Selecione uma opção</option>
+                  <option>Lentes de contato</option>
+                  <option>Facetas</option>
+                  <option>Prótese fixa</option>
+                  <option>Zircônia</option>
+                  <option>E.Max</option>
+                  <option>Planejamento 3D</option>
+                  <option>Protocolos</option>
+                  <option>CAD/CAM</option>
+                  <option>Parceria com laboratório</option>
+                </select>
+              </div>
+              <div class="ct-field">
+                <label for="message">Mensagem</label>
+                <textarea id="message" name="message" placeholder="Conte sobre o caso, material, prazo ou dúvida técnica." required></textarea>
+              </div>
+              <button class="lab-btn lab-btn--fill lab-btn--full" type="submit">
+                Enviar por e-mail <svg class="lab-ic" viewBox="0 0 24 24"><use href="#ic-send" /></svg>
+              </button>
+              <p class="form-status" aria-live="polite"></p>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ CTA ============ -->
+      <section class="lab-cta">
+        <div class="lab-shell lab-cta-inner">
+          <div class="lab-cta-lead">
+            <div class="lab-cta-seal" data-seal aria-hidden="true"></div>
+            <div class="lab-cta-text">
+              <h2>Se o caso é urgente,<br />fale direto pelo WhatsApp.</h2>
+              <p>A mensagem já abre com o contexto do site para agilizar o atendimento.</p>
+            </div>
+          </div>
+          <a class="lab-btn lab-btn--light lab-cta-btn" href="#" data-whatsapp>
+            Abrir WhatsApp <svg class="lab-ic" viewBox="0 0 24 24"><use href="#ic-wa" /></svg>
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <!-- ============ FOOTER ============ -->
+    <footer class="lab-footer">
+      <div class="lab-shell lab-footer-grid">
+        <div class="lab-footer-brand">
+          <a class="lab-brand lab-brand--dark" href="index.html" aria-label="Laborite Estética Dental">
+            <svg class="lab-mark" viewBox="0 0 100 110" aria-hidden="true"><use href="#ic-diamond" /></svg>
+            <span class="lab-word"><strong>LABORITE</strong><em>Estética Dental</em></span>
+          </a>
+          <p>Excelência em prótese dental com tecnologia digital, materiais premium e acabamento artesanal.</p>
+          <div class="lab-social">
+            <a href="https://www.instagram.com/laborite.lab/" target="_blank" rel="noreferrer" aria-label="Instagram"><svg viewBox="0 0 24 24"><use href="#ic-ig" /></svg></a>
+            <a href="#" data-whatsapp aria-label="WhatsApp"><svg viewBox="0 0 24 24"><use href="#ic-wa" /></svg></a>
+            <a href="#" data-email aria-label="E-mail"><svg viewBox="0 0 24 24"><use href="#ic-mail" /></svg></a>
+          </div>
+        </div>
+
+        <div class="lab-footer-col">
+          <h4>Contato</h4>
+          <a href="#" data-whatsapp><svg viewBox="0 0 24 24"><use href="#ic-phone" /></svg> (11) 99999-0000</a>
+          <a href="#" data-email><svg viewBox="0 0 24 24"><use href="#ic-mail" /></svg> contato@laborite.com.br</a>
+          <a href="https://www.instagram.com/laborite.lab/" target="_blank" rel="noreferrer"><svg viewBox="0 0 24 24"><use href="#ic-ig" /></svg> @laborite.lab</a>
+        </div>
+
+        <nav class="lab-footer-col" aria-label="Links rápidos">
+          <h4>Links rápidos</h4>
+          <a href="index.html">Home</a>
+          <a href="sobre.html">Sobre nós</a>
+          <a href="servicos.html">Soluções</a>
+          <a href="fluxo.html">Fluxo digital</a>
+          <a href="portfolio.html">Resultados</a>
+          <a href="contato.html">Contato</a>
+        </nav>
+
+        <div class="lab-footer-col">
+          <h4>Horário de atendimento</h4>
+          <p class="lab-hours"><strong>Segunda a sexta</strong><span>08h às 18h</span></p>
+          <p class="lab-hours"><strong>Sábado (sob consulta)</strong><span>08h às 12h</span></p>
+        </div>
+
+        <div class="lab-footer-seal" data-seal aria-hidden="true"></div>
+      </div>
+
+      <div class="lab-footer-bottom">
+        <div class="lab-shell lab-demo-note">
+          <span>Site demonstrativo criado para portfólio — marca, contatos e informações fictícios. Imagens meramente ilustrativas.</span>
+        </div>
+        <div class="lab-shell">
+          <span>© <span data-year></span> Laborite Estética Dental. Todos os direitos reservados.</span>
+          <span>WhatsApp, e-mail e Instagram disponíveis.</span>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://unpkg.com/lenis@1.2.3/dist/lenis.min.js"></script>
+    <script defer src="js/main.js"></script>
+    <script defer src="js/home.js"></script>
+  </body>
+</html>

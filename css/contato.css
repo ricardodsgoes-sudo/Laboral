@@ -1,0 +1,331 @@
+/* ============================================================
+   Laborite — página "Contato". Estilos próprios.
+   Reaproveita css/home.css (tokens, header, footer, botões,
+   selo, .lab-wave, .lab-cta, reveal, parallax). Aqui só o novo.
+   Formulário usa data-contact-form + .form-status (js/main.js).
+   ============================================================ */
+
+/* ---- Page hero ----------------------------------------------------- */
+
+.ct-hero {
+  position: relative;
+  overflow: hidden;
+  padding: var(--hero-pad);
+  background:
+    linear-gradient(104deg, rgba(6, 34, 56, 0.96) 0%, rgba(9, 47, 75, 0.9) 48%, rgba(12, 64, 100, 0.46) 100%),
+    url("../img/imgi_126_619898347_18165153817397173_2249590484605716681_n.webp") center 44% / cover no-repeat;
+  color: var(--white);
+}
+
+.ct-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(55% 80% at 88% 6%, rgba(255, 255, 255, 0.12), transparent 60%),
+    radial-gradient(50% 70% at 0% 100%, rgba(0, 0, 0, 0.2), transparent 60%);
+  pointer-events: none;
+}
+
+.ct-hero-inner {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 1.25fr 0.75fr;
+  align-items: center;
+  gap: 40px;
+}
+
+.ct-hero-copy {
+  max-width: 640px;
+}
+
+.ct-hero h1 {
+  text-transform: uppercase;
+  color: var(--white);
+  font-size: clamp(2rem, 4.2vw, 3.3rem);
+  font-weight: 700;
+  line-height: 1.08;
+  letter-spacing: -0.01em;
+  margin-bottom: 22px;
+}
+
+.ct-hero p {
+  max-width: 52ch;
+  color: rgba(255, 255, 255, 0.86);
+  font-size: clamp(1rem, 1.4vw, 1.12rem);
+  font-weight: 300;
+  line-height: 1.7;
+  margin-bottom: 34px;
+}
+
+.ct-hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.ct-hero-seal {
+  justify-self: end;
+  width: clamp(200px, 24vw, 300px);
+  color: rgba(255, 255, 255, 0.9);
+  will-change: transform;
+}
+
+/* ---- Eyebrow ------------------------------------------------------- */
+
+.ct-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 18px;
+  font-size: 0.74rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.ct-eyebrow::before,
+.ct-eyebrow::after {
+  content: "";
+  width: 26px;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.ct-eyebrow--ink {
+  color: var(--blue);
+}
+
+.ct-eyebrow--ink::before,
+.ct-eyebrow--ink::after {
+  background: var(--blue);
+}
+
+/* ---- Seção contato (canais + formulário) --------------------------- */
+
+.ct-section {
+  padding: clamp(58px, 7vw, 100px) 0;
+  background: var(--white);
+}
+
+.ct-grid {
+  display: grid;
+  grid-template-columns: 0.92fr 1.08fr;
+  gap: clamp(30px, 4vw, 56px);
+  align-items: start;
+}
+
+.ct-info .lab-head {
+  margin-bottom: 18px;
+}
+
+.ct-info-lead {
+  max-width: 46ch;
+  margin-bottom: 26px;
+  color: var(--body);
+  line-height: 1.7;
+}
+
+.ct-channels {
+  display: grid;
+  gap: 14px;
+}
+
+.ct-channel {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 18px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: var(--white);
+  box-shadow: var(--shadow-card);
+  transition: transform 0.25s var(--ease), box-shadow 0.25s var(--ease), border-color 0.25s var(--ease);
+}
+
+.ct-channel:hover {
+  transform: translateY(-3px);
+  border-color: var(--blue);
+  box-shadow: 0 20px 40px rgba(12, 52, 82, 0.12);
+}
+
+.ct-channel-ic {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: linear-gradient(140deg, rgba(42, 134, 192, 0.14), rgba(22, 101, 150, 0.12));
+  color: var(--blue);
+  transition: transform 0.3s var(--ease);
+}
+
+.ct-channel:hover .ct-channel-ic {
+  transform: translateY(-2px) rotate(-4deg);
+}
+
+.ct-channel-ic svg {
+  width: 24px;
+  height: 24px;
+}
+
+.ct-channel-meta {
+  display: grid;
+  gap: 2px;
+}
+
+.ct-channel-meta strong {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--body);
+}
+
+.ct-channel-meta span {
+  font-size: 0.98rem;
+  font-weight: 500;
+  color: var(--ink);
+}
+
+.ct-hours {
+  margin-top: 26px;
+  padding-top: 24px;
+  border-top: 1px solid var(--line);
+}
+
+.ct-hours h4 {
+  margin-bottom: 12px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink);
+}
+
+.ct-hours p {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 5px 0;
+  color: var(--body);
+  font-size: 0.92rem;
+}
+
+.ct-hours strong {
+  font-weight: 600;
+  color: var(--ink);
+}
+
+/* ---- Formulário ---------------------------------------------------- */
+
+.ct-form-card {
+  padding: clamp(24px, 3vw, 36px);
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: var(--r);
+  box-shadow: var(--shadow-card);
+}
+
+.ct-field {
+  display: grid;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.ct-field label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--ink);
+}
+
+.ct-field input,
+.ct-field select,
+.ct-field textarea {
+  width: 100%;
+  padding: 13px 15px;
+  border: 1.5px solid var(--line);
+  border-radius: 12px;
+  background: var(--soft-2);
+  color: var(--ink);
+  font: inherit;
+  font-size: 0.95rem;
+  transition: border-color 0.2s var(--ease), box-shadow 0.2s var(--ease), background 0.2s var(--ease);
+}
+
+.ct-field textarea {
+  min-height: 132px;
+  resize: vertical;
+}
+
+.ct-field input::placeholder,
+.ct-field textarea::placeholder {
+  color: #9fb1bd;
+}
+
+.ct-field input:focus,
+.ct-field select:focus,
+.ct-field textarea:focus {
+  outline: none;
+  border-color: var(--blue);
+  background: var(--white);
+  box-shadow: 0 0 0 4px rgba(22, 101, 150, 0.12);
+}
+
+.ct-form .lab-btn--full {
+  margin-top: 4px;
+}
+
+.form-status {
+  margin-top: 14px;
+  min-height: 1.2em;
+  font-size: 0.9rem;
+  color: var(--blue);
+}
+
+/* ---- Responsivo ----------------------------------------------------- */
+
+@media (max-width: 1024px) {
+  .ct-hero-inner {
+    grid-template-columns: 1fr;
+  }
+
+  /* diamante girando visível no mobile, centralizado e baixo na hero */
+  .ct-hero-seal {
+    top: auto;
+    bottom: clamp(74px, 18vw, 120px);
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    transform: none;
+    width: clamp(150px, 42vw, 210px);
+    color: rgba(255, 255, 255, 0.22);
+  }
+}
+
+@media (max-width: 880px) {
+  .ct-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 620px) {
+  .ct-channels {
+    gap: 12px;
+  }
+
+  .ct-channel {
+    padding: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --shell: calc(100vw - 28px);
+  }
+}
